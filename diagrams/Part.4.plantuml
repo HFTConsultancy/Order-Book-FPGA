@@ -1,0 +1,19 @@
+@startuml Part 4: Order Book
+
+title Part 4: Order Book
+
+skinparam handwritten true
+left to right direction
+
+skinparam cloud {
+    handwritten false
+}
+
+cloud "Normalized Messages" as Normalized
+node "Order Book Processor" as OrderBook
+database "Block RAM" as Memory
+
+Normalized --> OrderBook
+OrderBook -> Memory
+
+@enduml
